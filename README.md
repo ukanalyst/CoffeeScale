@@ -17,6 +17,7 @@ sudo apt-get upgrade
 sudo apt-get -y remove festival apache2-mpm-prefork apache2-utils apache2.2-bin apache2.2-common libapache2-mod-php5
 sudo apt-get -y install mpg123  php5-sqlite man espeak sqlite3 subversion git openssh-server ntp lighttpd libusb-1.0 mysql-server python python-mysqldb php5 php5-mysql phpmyadmin python-setuptools python-pip python-dateutil ssmtp mailutils
 sudo apt-get install python-qt4
+sudo apt-get install xvfb
 sudo pip install twython
 
 seems to REQUIRE an older version of pyusb on newer linux
@@ -200,7 +201,7 @@ scaleReport.py
  Running / Using
  -----
 
- - Confiure lighttpd nano:
+ - Configure lighttpd:
 `````
 - sudo nano /etc/lighttpd/lighttpd.conf
 - Change Document Root and, optionally, port
