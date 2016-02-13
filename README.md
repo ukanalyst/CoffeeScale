@@ -199,6 +199,11 @@ scaleReport.py
  
  Running / Using
  -----
+
+ - Confiure lighttpd nano:
+ ''' sudo nano /etc/lighttpd/lighttpd.conf
+ ''' Change Document Root and, optionally, port
+ ''' sudo /etc/init.d/lighttpd restart
  
  - do the setup steps above (probably have to make the scripts executable)
  - put index.php in your web server document root
