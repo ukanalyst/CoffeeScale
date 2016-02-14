@@ -205,9 +205,22 @@ scaleReport.py
 `````
 - sudo nano /etc/lighttpd/lighttpd.conf
 - Change Document Root and, optionally, port
+- Add the following line to the 'server.modules' section:
+  "mod_cgi",
+- Then to get lighttpd to recognze python scripts we need to add the following new section at the end of the file.
+
+$HTTP["url"] =~ "^/cgi-bin/" {
+    cgi.assign = (".py" => "/usr/bin/python")
+}
+
+- Now restart Lighttpd:
 - sudo /etc/init.d/lighttpd restart
  `````
- 
+Create the folder /usr/local/CoffeeScale/cgi-bin and set permissions:
+`````
+# mkdir /usr/local/CoffeeScale/cgi-bin
+# sudo chown www-data:www-data /usr/local/CoffeeScale/cgi-bin
+````` 
  - do the setup steps above (probably have to make the scripts executable)
  - put index.php in your web server document root
  - put sendReading in the web server's cgi-bin folder (or change the code in index.php to point to the correct place)
